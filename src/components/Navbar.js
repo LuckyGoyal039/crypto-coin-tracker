@@ -9,9 +9,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import DropdownComponent from './DropdownComponent';
 import CoinImage from '../coinImage.png'
-// import SortDropdownComponent from './SortDropdownComponent';
-
-// import Dropdown from 'react-bootstrap/Dropdown';
 
 function NavbarComponent({func, searchFun}) {
 
@@ -26,10 +23,7 @@ function NavbarComponent({func, searchFun}) {
         // console.log(evt);
 
     }
-    
-    // const handleSorting=(evt)=>{
-    //     sortContent(evt);
-    // }
+
     return (
         <React.Fragment>
             <Navbar bg="light temp" expand="lg" style={{height:'9vh'}}>
@@ -42,26 +36,9 @@ function NavbarComponent({func, searchFun}) {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            {/* <Nav.Link href="#action1">Home</Nav.Link> */}
-                            {/* <Nav.Link href="#action2">Theme</Nav.Link> */}
-                            {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action4">
-                                    Another action
-                                </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action5">
-                                    Something else here
-                                </NavDropdown.Item>
-                            </NavDropdown> */}
-
                             <NavDropdown title={showCurrency} onSelect={handleCurrency}>
                                 <DropdownComponent />
                             </NavDropdown>
-                            {/* Sort Cateogry */}
-                            {/* <NavDropdown title='Sort' onSelect={handleSorting}>
-                                <SortDropdownComponent/>
-                            </NavDropdown> */}
 
                         </Nav>
                         <Form className="d-flex">
@@ -77,8 +54,6 @@ function NavbarComponent({func, searchFun}) {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
-            {/* <Dropdown func={.func}/> */}
         </React.Fragment>
     )
 }
