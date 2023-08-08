@@ -89,3 +89,8 @@ div.message>h1{
   color:white;
   text-align:center;
 }
+
+
+.main-div{
+  overflow-x: scroll;
+}

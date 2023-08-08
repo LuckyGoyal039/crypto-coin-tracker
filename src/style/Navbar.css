@@ -8,6 +8,14 @@
   }
 
   .coin-image{
-    width:3vw;
-    height:6vh;
+    width:40px;
+    height:40px;
+  }
+  .container-class{
+    /* border:1px solid black; */
+    width:100%;
+  }
+  .navbar-main{
+    /* border:1px solid red; */
+    width:100%;
   }

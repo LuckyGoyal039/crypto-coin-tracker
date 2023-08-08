@@ -52,7 +52,6 @@ function Show(props) {
         //   }))
         // }
           setCoins(res.data);
-        //  console.log(res.data);
       }).catch(error => console.log(error))
   }, [props.curr])
 
@@ -60,15 +59,11 @@ function Show(props) {
     setSearch(props.searchContent);
   }, [props.searchContent])
 
-  // const handleChange = e => {
-  //   setSearch(e.target.value)
-  // }
-
   const filteredCoins = coins.filter(coin =>
     coin.name.toLowerCase().includes(search.toLowerCase()))
 
   return (
-    <div>
+    <div className='main-div'>
 
     {
       (!filteredCoins[0]) ? <div className="message"><h1>Data not found</h1></div> :
@@ -76,7 +71,6 @@ function Show(props) {
       <table className="table table-hover table-dark">
       <thead>
                 <tr>
-                  {/* <th scope="col" className='mkt-cap'>#</th> */}
                   <th scope="col" style={{paddingLeft:"3vw"}}>Coin</th>
                   <th scope="col" className='mkt-cap'>Price({props.curr.toUpperCase()})</th>
                   <th scope="col" className='mkt-cap'>Price Change(%)</th>
@@ -97,8 +91,6 @@ function Show(props) {
                   marketcap={coin.market_cap}
                   price={coin.current_price}
                   pricechange={coin.price_change_percentage_24h}
-                  // currency={curr.toUpperCase()}
-                // volume={coin.total_volume}
                 />
                 );
               })
