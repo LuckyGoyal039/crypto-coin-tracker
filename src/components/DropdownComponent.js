@@ -16,15 +16,6 @@ const DropdownComponent = (props) => {
 
     return (
         <React.Fragment>
-            {/* <select onChange={handleChange} className='decorated'>
-                {
-                    list.map(items => {
-                        return (
-                            (items === 'usd') ? <option key={items} value={items} selected >{items}</option> :
-                                <option key={items} value={items}>{items}</option>);
-                    })
-                }
-            </select> */}
             {
                 list.map(items => {
                     return (

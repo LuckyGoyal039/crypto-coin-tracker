@@ -1,13 +1,12 @@
-.temp{
-    background-color: #F4A950;
+.temp {
+  background-color: #F4A950;
+}
+.dropdown-menu {
+  height: 200px;
+  overflow-y: scroll;
 }
 
-.dropdown-menu {
-    height: 200px;
-    overflow-y: scroll;
-  }
-
-  .coin-image{
-    width:3vw;
-    height:6vh;
-  }
+.coin-image {
+  width: 40px;
+  height: 40px;
+}

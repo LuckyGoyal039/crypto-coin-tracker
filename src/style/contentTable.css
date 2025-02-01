@@ -1,0 +1,13 @@
+.custom-table{
+    max-width:100%;
+}
+
+.heading-row{
+    width:99vw;
+    display: flex;
+    justify-content: space-between;
+    padding:0 20px 10px;
+}
+.heading-row>th{
+    display: block;
+}

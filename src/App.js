@@ -1,12 +1,9 @@
 import React from 'react';
 import Home from './components/Home';
-// import Demo from './components/Demo';
-// import './App.css';
-function App(){
-    return(
+function App() {
+    return (
         <React.Fragment>
-            <Home/>
-            {/* <Demo/> */}
+            <Home />
         </React.Fragment>
     );
 }

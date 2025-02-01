@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import axios from 'axios'
 import '../style/Navbar.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -9,26 +8,26 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import DropdownComponent from './DropdownComponent';
 import CoinImage from '../coinImage.png'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function NavbarComponent({func, searchFun}) {
 
-    const [showCurrency,setShowCurrency]=useState('INR')
+function NavbarComponent({ func, searchFun }) {
+
+    const [showCurrency, setShowCurrency] = useState('INR')
     const handleSearch = (e) => {
         searchFun(e.target.value);
-        // console.log(e.target.value);
     }
+    
     const handleCurrency = (evt) => {
         func(evt);
-        setShowCurrency(evt); 
-        // console.log(evt);
-
+        setShowCurrency(evt);
     }
 
     return (
         <React.Fragment>
-            <Navbar bg="light temp" expand="lg" style={{height:'9vh'}}>
+            <Navbar bg="light temp" expand="lg" style={{ height: '50px' }}>
                 <Container fluid>
-                    <Navbar.Brand><img src={CoinImage} alt="CoinImage" className='coin-image'/></Navbar.Brand>
+                    <Navbar.Brand><img src={CoinImage} alt="CoinImage" className='coin-image' /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav

@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import Show from './Show';
 import '../style/Home.css';
-// import Navbar from './Navbar';
 import NavbarComponent from './Navbar';
 function Home() {
-    const [currency,setCurrency]=useState('inr');
-    const [searching,setSearching]=useState('');
+    const [currency, setCurrency] = useState('inr');
+    const [searching, setSearching] = useState('');
 
-    function searchCoin(info){
+    function searchCoin(info) {
         setSearching(info);
     }
-    function ChnageCurrency(data){
+    function ChnageCurrency(data) {
         setCurrency(data);
     }
     return (
         <React.Fragment>
-            <NavbarComponent func={ChnageCurrency} searchFun={searchCoin}/>
-            <Show curr={currency}  searchContent={searching}/>
+            <NavbarComponent func={ChnageCurrency} searchFun={searchCoin} />
+            <Show curr={currency} searchContent={searching} />
         </React.Fragment>
     )
-    
+
 }
 export default Home;

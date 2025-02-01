@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import '../style/Show.css';
 import axios from 'axios'
-import Coin from './Coin';
+import ContentTable from './ContentTable';
+import '../style/show.css';
+
 
 function Show(props) {
   const [coins, setCoins] = useState([])
@@ -10,7 +11,7 @@ function Show(props) {
   useEffect(() => {
     axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${props.curr}&order=market_cap_desc&per_page=100&page=1&sparkline=false`)
       .then(res => {
-          setCoins(res.data);
+        setCoins(res.data);
       }).catch(error => console.log(error))
   }, [props.curr])
 
@@ -23,41 +24,10 @@ function Show(props) {
 
   return (
     <div>
-
-    {
-      (!filteredCoins[0]) ? <div className="message"><h1>Data not found</h1></div> :
-      
-      <table className="table table-hover table-dark">
-      <thead>
-                <tr>
-                  <th scope="col" style={{paddingLeft:"3vw"}}>Coin</th>
-                  <th scope="col" className='mkt-cap'>Price({props.curr.toUpperCase()})</th>
-                  <th scope="col" className='mkt-cap'>Price Change(%)</th>
-                  <th scope="col" className='mkt-cap'>Marketcap({props.curr.toUpperCase()})</th>
-                </tr>
-              </thead>
-              <tbody>
-            {
-                filteredCoins.map(coin => {
-                  let count=1;
-                  return (
-                <Coin
-
-                  key={coin.id}
-                  name={coin.name}
-                  image={coin.image}
-                  symbol={coin.symbol}
-                  marketcap={coin.market_cap}
-                  price={coin.current_price}
-                  pricechange={coin.price_change_percentage_24h}
-                />
-                );
-              })
-            }
-              </tbody>
-            </table>
-          }
-      </div>
+      {
+        (!filteredCoins[0]) ? <div className="message"><h1>Data not found</h1></div> : <ContentTable currency={props.curr} filteredCoins={filteredCoins}/>
+      }
+    </div>
   );
 }
 
